@@ -29,7 +29,7 @@ class User extends Authenticatable
 
 
     public function article() {
-        return $this->hasOne('App\Article', 'author_id', 'id');
+        return $this->hasMany('App\Article', 'author_id', 'id');
     }
 
 }

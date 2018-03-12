@@ -18,4 +18,6 @@ class Article extends Model
     public function categories() {
         return $this->belongsToMany('App\Category');
     }
+
+    protected $fillable = ['title','subtitle', 'url', 'keywords', 'description', 'annotation', 'text', 'images', 'docs', ' author_id', 'published_start', 'published_end', 'deleted_at'];
 }

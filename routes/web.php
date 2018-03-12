@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('site.index');
-});
+Route::match(['get','post'],'/',['uses'=>'IndexController@execute','as'=>'home']);
+Route::get('/page/{alias}',['uses'=>'PageController@execute','as'=>'page']);
 
 Auth::routes();
 
