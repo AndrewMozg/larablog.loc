@@ -7,8 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     //
+    protected $table = 'articles';
+
     public function user() {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User', 'id');
     }
 
     public function tags() {
@@ -19,5 +21,4 @@ class Article extends Model
         return $this->belongsToMany('App\Category');
     }
 
-    protected $fillable = ['title','subtitle', 'url', 'keywords', 'description', 'annotation', 'text', 'images', 'docs', ' author_id', 'published_start', 'published_end', 'deleted_at'];
 }

@@ -27,7 +27,8 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-
+    protected $table = 'users';
+    
     public function article() {
         return $this->hasMany('App\Article', 'author_id', 'id');
     }

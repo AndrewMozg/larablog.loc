@@ -6,7 +6,7 @@
         @foreach($articles as $k=>$article)
           <div class="blog-post">
             <h2 class="blog-post-title">{!! $article->title!!}</h2>
-            <p class="blog-post-meta">{{ $article->published_start }}  by {{ $article->author_id }}</p>
+            <p class="blog-post-meta">{{ Carbon\Carbon::parse($article->published_start)->format('d-m-Y i') }} by {{ $article->name }}</p>
             {!! $article->text !!}
           </div><!-- /.blog-post -->
         @endforeach
