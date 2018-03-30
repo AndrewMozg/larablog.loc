@@ -13,10 +13,12 @@ class IndexController extends Controller
     // 
     public function execute(Request $request) {
 
-//table articles join with table users and out 5 pages
-$articles = DB::table('articles')
-            ->join('users', 'articles.author_id', '=', 'users.id')
-            ->select('title', 'published_start', 'name', 'text')->paginate(5);
+
+
+$articles = Article::with('user')->get();
+dd($articles);
+
+
 
 
 

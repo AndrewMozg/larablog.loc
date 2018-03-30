@@ -30,7 +30,7 @@ class User extends Authenticatable
     protected $table = 'users';
     
     public function article() {
-        return $this->hasMany('App\Article', 'author_id', 'id');
+        return $this->hasMany('App\Article', 'id');
     }
 
 }

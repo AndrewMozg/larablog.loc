@@ -10,7 +10,7 @@ class Article extends Model
     protected $table = 'articles';
 
     public function user() {
-        return $this->belongsTo('App\User', 'id');
+        return $this->belongsTo('App\User', 'author_id');
     }
 
     public function tags() {
