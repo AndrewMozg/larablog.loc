@@ -15,14 +15,13 @@ class IndexController extends Controller
 
 
 
-$articles = Article::with('user')->get();
-dd($articles);
+$articles = Article::with('user')->paginate(5);
+$interesting_articles = Article::where('interesting','=', 'yes')->paginate(2);
 
 
 
 
-
-    return view('site.index', compact(['articles']));
+    return view('site.index', compact(['articles', 'interesting_articles']));
 }
 
 
