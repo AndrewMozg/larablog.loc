@@ -7,7 +7,7 @@
           <div class="blog-post">
             <h2 class="blog-post-title">{!! $article->title!!}</h2>
             <p class="blog-post-meta">{{ Carbon\Carbon::parse($article->published_start)->format('d-m-Y i') }} by {{ $article->user['name'] }}</p>
-            {!! $article->text !!}
+            {!! $article->annotation !!}
           </div><!-- /.blog-post -->
         @endforeach
 
